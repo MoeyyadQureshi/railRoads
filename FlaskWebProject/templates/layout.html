@@ -3,30 +3,49 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rail-Roads</title>
+    <title>Rail Roads</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" integrity="sha256-bZkavcZrFlXfus3527w/pLbvXgyqnrHbNdMpwNXf1dA=" crossorigin="anonymous" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
+    <style>
+        nav div ul a, footer a{
+            color: #FFAB40;
+        }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+    </style>
 </head>
 
 <body>
     <div class="navbar-fixed">
         <nav>
-            <div class="nav-wrapper">
-				<a href="#!" class="brand-logo">railRoads</a>
+            <div class="nav-wrapper blue-grey darken-1">
+                <a href="{{ url_for('home') }}" class="brand-logo">&nbsp;railRoads</a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">About</a></li>
-                    <li><a href="badges.html">Survey</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('survey') }}">Survey</a></li>
                 </ul>
             </div>
         </nav>
     </div>
-    <div class="container body-content">
-        {% block content %}{% endblock %}
-        <hr />
-        <footer>
-            <p>&copy; {{ year }} - My Flask Application</p>
+    <main>
+        <div class="container body-content">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+        <footer class="page-footer blue-grey darken-1 center-align">
+          <div class="footer-copyright align-center">
+            <div class="container">
+            <a href="https://railroads.azurewebsites.net">railroads.azurewebsites.net</a>&nbsp;© 2016 Copyright railRoads
+            </div>
+          </div>
         </footer>
-    </div>
 
     <script src="/static/scripts/jquery-1.10.2.js"></script>
     <script src="/static/scripts/bootstrap.js"></script>
