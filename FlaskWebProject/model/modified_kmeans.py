@@ -6,6 +6,10 @@ from sklearn.cluster import KMeans
 from collections import Counter
 
 def prediction(user_decisions):  
+    
+    for decision in user_decisions:
+        decision = int(decision)
+        
     #IMPORTANT: Number of clusters
     k = 2
     
