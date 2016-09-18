@@ -11,8 +11,8 @@ def prediction(user_decisions):
     
     #DATA
     clf = KMeans(n_clusters = k, n_init=100)
-    data_stats = [[1,1,1],[1,2,1],[2,1,1],[2,2,1],[7,7,7],[7,8,7],[8,7,7]]
-    data_decisions = [[2, 2, 2, 2], [2, 2, 2, 2], [2, 2, 2, 2], [2, 2, 2, 2], [3, 3, 3, 3], [1,1,3,3], [1,1,3,3]]
+    data_stats = [[2, 7, 5, 4], [8, 8, 5, 5], [6, 5, 5, 8], [8, 8, 8, 1], [3, 9, 9, 3], [5, 6, 3, 1], [4, 5, 1, 1], [8, 7, 7, 8]]
+    data_decisions = [[2, 2, 0, 1, 1, 1, 1, 2],[2, 1, 1, 2, 0, 1, 2, 2],[3, 1, 1, 0, 4, 0, 4, 1],[0, 0, 0, 2, 3, 1, 1, 1],[0, 1, 1, 2, 3, 1, 1, 0],[1, 2, 2, 2, 1, 1, 1, 0],[3, 0, 0, 0, 3, 0, 3, 1],[0, 2, 2, 2, 2, 1, 1, 1]]
     
     #Fits classifer wuth the status
     clf.fit(data_stats)
@@ -86,5 +86,3 @@ def prediction(user_decisions):
                 break
 
     return user_pred
-
-            
